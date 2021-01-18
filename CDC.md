@@ -52,6 +52,43 @@ Acteur:
     - Pouvoir avoir une lecture rapide et efficiente
     - Avoir des informations qui permettent la comparaison
     - Avoir des références précises  
+
+Lecteur:
+<div class="mermaid">
+graph TD
+    P[Présentation]<-->Compétences
+    P<-->Expériences
+    P<-->Exemples;
+</div>
+
+<div class="mermaid">
+classDiagram
+class Compétences {
+    +String contexte
+    +String intitule
+    +String codeNorme
+}
+class Expériences {
+    +String Lieu
+    +String contexte
+    +outils
+}
+class Exemples{
+    +outil
+    +intitule
+    +resume
+    +lien
+}
+class CompExp
+class CompExe
+class ExpExe
+Compétences -- "many" CompExp:Contains
+Compétences -- "many" CompExe:Contains
+Exemples -- "many" CompExe:Contains
+Exemples -- "many" ExpExe:Contains
+Expériences -- "many" ExpExe:Contains
+Expériences -- "many" CompExp:Contains
+</div>
 <!--
 - Description demandeur
 - Origine besoin
@@ -73,6 +110,9 @@ Un porte-feuille de compétences peut devenir quelque chose de très riche, et s
     - liste par expériences et exemples
     - liste par références
     - liste par exemples
+    - détail d'une expérience
+    - détail d'une compétence
+    - détail d'un exemple  
 
 Le but est d'avoir une lecture d'ensemble rapide et efficace sans surplus d'informations, avec le présence de liens permettant davantage d'informations sur un aspect, et d'autres liens. Ceci permettrait une navigation simple, d'éviter la perte d'informations (affichage simplifié mais pas de pertes) et d'y accéder rapidement.  
 
@@ -91,7 +131,21 @@ Comme précédemment évoqué, la solution choisie est totalement à notre appr�
 
 # Conception
 # Introduction
-- Rappelé fonctionnalités
+<!-- - Rappelé fonctionnalités -->
+- création:
+    - créer des compétences
+    - créer des expériences
+    - créer des références
+    - créer des exemples
+    - créer des liens entre toutes ces entités (si les liens existent) 
+- lecture:
+    - liste par expériences et exemples
+    - liste par références
+    - liste par exemples
+    - détail d'une expérience
+    - détail d'une compétence
+    - détail d'un exemple  
+
 - Logiciels existants/conccurence
 - Etude logiciel développé
     - Type de solution
@@ -105,9 +159,9 @@ Comme précédemment évoqué, la solution choisie est totalement à notre appr�
     - cout organisationelle
     - interop avec les SI
 - Proposition d'une solution
-- FDécoupage de la solution en sous système + diagramme de GANTT
+- Découpage de la solution en sous système + diagramme de GANTT
 - Modélisation front-end
     - charte graphique application
     - maquettage
 
-
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CDC.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///c%3A//Users//donat//Desktop//lettre_motiv.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="introduction">Introduction</h1>
+<p>Sans le contexte de notre seconde année de master MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises), nous participons à l'UE &quot;Trans-10 Environnement socio-économique&quot;. Dans le cadre de cet UE nous nous intéressons au porte-feuille de compétences. Ce porte-feuille de compétences est un outil, utile par exemple dans la recherche d'un poste dans un entreprise, qui permet de montrer et justifier un ensemble de compétences divers et variés, les mettre en valeur, ce qui peut, par exemple, compléter un CV.<br>
+Ce cahier des charges concerne donc l'élaboration de ce porte-feuille de compétences.</p>
+<h1 id="besoins">Besoins</h1>
+<p>Le porte-feuille doit remplir des besoins différents, autant que ce soit des besoins venant du créateur que ce soit du lecteur.<br>
+Le créateur doit pouvoir aisément construire son catalogue de compétences, justifié, construit autour d'expériences etc..<br>
+Quant au lecteur, la lecture, pour lui, doit être rapide et simple, le support doit lui permettre d'identifier rapidement les compétences et justifications.<br>
+Nous devons donc définir ce qu'est une compétence, comment la justifié, et définir les éléments qu'il y a autour.</p>
+<!--réflexion sur le porte-feuille de compétences-->
+<h1 id="existant">Existant</h1>
+<p>Dans le cadre de ce projet, nous avons la présence d'existant.<br>
+Deux document word sont à notre disposition:<br>
+- Document de structure d'une compétence<br>
+- Document exemple de porte-feuille de compétence<br>
+Le premier document indique comment énoncé et présenter une compétence. Ce document constitue un bon début, cependant certains détails utiles peuvent manquer. Comme des codes d'identification de compétences référencé dans les normes européennes.<br>
+Le second document est un exemple de porte-feuille de compétences. Il respecte la structure défini dans le premier document. Pourtant, le document manque d'esthétique et il n'y a pas de réelle emphase sur les compétences. Certains manques sont à palier afin de permettre une expérience utilisateur plus intéressante et proche des besoins énoncés.</p>
+<h1 id="cahier-des-charges">Cahier des charges</h1>
+<!--
+- Description général
+- Description fonctionelle
+- Description de l'environnement technique
+- charte graphique
+- contraintes
+-->
+<h2 id="introduction">Introduction</h2>
+<h2 id="contexte">Contexte</h2>
+<p>Le projet, le porte-feuille de compétences, est développé dans un cadre universitaire, et a aussi un intérêt personnel. Nous développons ce projet à deux, et dans un cadre universitaire, nous nous efforcerons de ne pas choisir de solutions qui pourrait induire un coût en argent.<br>
+Nous devrons donc nous conformer aux exigences de l'université afin de satisfaire au mieux ce qui est demandé. Nous devons aussi pouvoir correctement présentés nos compétences.</p>
+<p>Comme énoncé précédemment, voici nos existants:</p>
+<pre class="hljs"><code><div>Deux document word sont à notre disposition:
+<span class="hljs-bullet">    - </span>Document de structure d'une compétence
+<span class="hljs-bullet">    - </span>Document exemple de porte-feuille de compétence
+Le premier document indique comment énoncé et présenter une compétence. Ce document constitue un bon début, cependant certains détails utiles peuvent manquer. Comme des codes d'identification de compétences référencé dans les normes européennes. 
+Le second document est un exemple de porte-feuille de compétences. Il respecte la structure défini dans le premier document. Pourtant, le document manque d'esthétique et il n'y a pas de réelle emphase sur les compétences. Certains manques sont à palier afin de permettre une expérience utilisateur plus intéressante et proche des besoins énoncés. 
+
+Le porte-feuille de compétences doit pouvoir en outre être facilement présenté que ce soit pour présenter ses compétences ou bien pour décrire son fonctionnement.
+¨Pour ce projet, nous n'avons pas de contraintes concernant le support ou la charte graphique, du moment que les critères et les besoins sont respectés.
+</div></code></pre>
+<p>Certains détails sont donc à compléter, concernant l'identification de compétences d'après des références, par exemple. Mais aussi sur l'esthétisme et l'emphase. Ces deux derniers points peuvent être importants pour le projet. Tout comme le CV, le porte-feuille de compétences est destiné à être revu et comparé avec d'autres, accroché le lecteur et lui donner des informations de manière rapide et effecace est stratégique.</p>
+<p>Acteur:</p>
+<ul>
+<li>Créateur:
+<ul>
+<li>formuler/ajouter des compétences</li>
+<li>se valoriser</li>
+</ul>
+</li>
+<li>Lecteur:
+<ul>
+<li>Pouvoir avoir une lecture rapide et efficiente</li>
+<li>Avoir des informations qui permettent la comparaison</li>
+<li>Avoir des références précises</li>
+</ul>
+</li>
+</ul>
+<p>Lecteur:</p>
+<div class="mermaid">
+graph TD
+    P[Présentation]<-->Compétences
+    P<-->Expériences
+    P<-->Exemples;
+</div>
+<div class="mermaid">
+classDiagram
+class Compétences {
+    +String contexte
+    +String intitule
+    +String codeNorme
+}
+class Expériences {
+    +String Lieu
+    +String contexte
+    +outils
+}
+class Exemples{
+    +outil
+    +intitule
+    +resume
+    +lien
+}
+class CompExp
+class CompExe
+class ExpExe
+Compétences -- "many" CompExp:Contains
+Compétences -- "many" CompExe:Contains
+Exemples -- "many" CompExe:Contains
+Exemples -- "many" ExpExe:Contains
+Expériences -- "many" ExpExe:Contains
+Expériences -- "many" CompExp:Contains
+</div>
+<!--
+- Description demandeur
+- Origine besoin
+    - Description existant
+    - description problèmes
+- Description générale du besoin
+- Description des catégories de l'utilisateur (acteurs)
+-->
+<h2 id="description-fonctionnelle">Description fonctionnelle</h2>
+<p>Un porte-feuille de compétences peut devenir quelque chose de très riche, et si toutes les informations sont sur une seule page, la quantité d'informations peut vite devenir peu digeste.</p>
+<ul>
+<li>création:
+<ul>
+<li>créer des compétences</li>
+<li>créer des expériences</li>
+<li>créer des références</li>
+<li>créer des exemples</li>
+<li>créer des liens entre toutes ces entités (si les liens existent)</li>
+</ul>
+</li>
+<li>lecture:
+<ul>
+<li>liste par expériences et exemples</li>
+<li>liste par références</li>
+<li>liste par exemples</li>
+<li>détail d'une expérience</li>
+<li>détail d'une compétence</li>
+<li>détail d'un exemple</li>
+</ul>
+</li>
+</ul>
+<p>Le but est d'avoir une lecture d'ensemble rapide et efficace sans surplus d'informations, avec le présence de liens permettant davantage d'informations sur un aspect, et d'autres liens. Ceci permettrait une navigation simple, d'éviter la perte d'informations (affichage simplifié mais pas de pertes) et d'y accéder rapidement.</p>
+<p>UML<br>
+méthode MoSCoW</p>
+<h2 id="description-technique">Description technique</h2>
+<!--existant et contraintes imposés par le client ou imposé par l'existant>
+## Charte graphique
+
+## Contraintes d'environnement
+<!--
+contraintes humaines, financières, temporelles, juridiques ...
+-->
+<p>Comme précédemment évoqué, la solution choisie est totalement à notre appréhension. Cependant, elle doit être accessible, donc lisible sur différents supports. De plus, il faut choisir une solution qui n'induit aucun coûts financer.</p>
+<h1 id="conception">Conception</h1>
+<h1 id="introduction">Introduction</h1>
+<!-- - Rappelé fonctionnalités -->
+<ul>
+<li>
+<p>création:</p>
+<ul>
+<li>créer des compétences</li>
+<li>créer des expériences</li>
+<li>créer des références</li>
+<li>créer des exemples</li>
+<li>créer des liens entre toutes ces entités (si les liens existent)</li>
+</ul>
+</li>
+<li>
+<p>lecture:</p>
+<ul>
+<li>liste par expériences et exemples</li>
+<li>liste par références</li>
+<li>liste par exemples</li>
+<li>détail d'une expérience</li>
+<li>détail d'une compétence</li>
+<li>détail d'un exemple</li>
+</ul>
+</li>
+<li>
+<p>Logiciels existants/conccurence</p>
+</li>
+<li>
+<p>Etude logiciel développé</p>
+<ul>
+<li>Type de solution</li>
+<li>Environnement de programmation</li>
+<li>Framework de développement</li>
+<li>Serveurs/hébergement</li>
+<li>Intégration au SI existant</li>
+</ul>
+</li>
+<li>
+<p>Etude impact de la solution choisie</p>
+<ul>
+<li>cout de dev</li>
+<li>cout installation et maintenance</li>
+<li>cout organisationelle</li>
+<li>interop avec les SI</li>
+</ul>
+</li>
+<li>
+<p>Proposition d'une solution</p>
+</li>
+<li>
+<p>Découpage de la solution en sous système + diagramme de GANTT</p>
+</li>
+<li>
+<p>Modélisation front-end</p>
+<ul>
+<li>charte graphique application</li>
+<li>maquettage</li>
+</ul>
+</li>
+</ul>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+</body>
+</html>
