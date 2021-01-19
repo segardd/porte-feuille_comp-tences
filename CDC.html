@@ -353,7 +353,7 @@ code {
 }
 
 </style>
-
+<link rel="stylesheet" href="file:///c%3A//Users//donat//Desktop//lettre_motiv.css" type="text/css">
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </head>
 <body>
@@ -366,20 +366,20 @@ code {
     });
   </script>
 <h1 id="introduction">Introduction</h1>
-<p>Sans le contexte de notre seconde année de master MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises), nous participons à l'UE &quot;Trans-10 Environnement socio-économique&quot;. Dans le cadre de cet UE nous nous intéressons au porte-feuille de compétences. Ce porte-feuille de compétences est un outil, utile par exemple dans la recherche d'un poste dans un entreprise, qui permet de montrer et justifier un ensemble de compétences divers et variés, les mettre en valeur, ce qui peut, par exemple, compléter un CV.
+<p>Sans le contexte de notre seconde année de master MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises), nous participons à l'UE &quot;Trans-10 Environnement socio-économique&quot;. Dans le cadre de cet UE nous nous intéressons au porte-feuille de compétences. Ce porte-feuille de compétences est un outil, utile par exemple dans la recherche d'un poste dans un entreprise, qui permet de montrer et justifier un ensemble de compétences divers et variés, les mettre en valeur, ce qui peut, par exemple, compléter un CV.<br>
 Ce cahier des charges concerne donc l'élaboration de ce porte-feuille de compétences.</p>
 <h1 id="besoins">Besoins</h1>
-<p>Le porte-feuille doit remplir des besoins différents, autant que ce soit des besoins venant du créateur que ce soit du lecteur.
+<p>Le porte-feuille doit remplir des besoins différents, autant que ce soit des besoins venant du créateur que ce soit du lecteur.<br>
 Le créateur doit pouvoir aisément construire son catalogue de compétences, justifié, construit autour d'expériences etc..<br>
-Quant au lecteur, la lecture, pour lui, doit être rapide et simple, le support doit lui permettre d'identifier rapidement les compétences et justifications.
+Quant au lecteur, la lecture, pour lui, doit être rapide et simple, le support doit lui permettre d'identifier rapidement les compétences et justifications.<br>
 Nous devons donc définir ce qu'est une compétence, comment la justifié, et définir les éléments qu'il y a autour.</p>
 <!--réflexion sur le porte-feuille de compétences-->
 <h1 id="existant">Existant</h1>
-<p>Dans le cadre de ce projet, nous avons la présence d'existant.
-Deux document word sont à notre disposition:
-- Document de structure d'une compétence
-- Document exemple de porte-feuille de compétence
-Le premier document indique comment énoncé et présenter une compétence. Ce document constitue un bon début, cependant certains détails utiles peuvent manquer. Comme des codes d'identification de compétences référencé dans les normes européennes.
+<p>Dans le cadre de ce projet, nous avons la présence d'existant.<br>
+Deux document word sont à notre disposition:<br>
+- Document de structure d'une compétence<br>
+- Document exemple de porte-feuille de compétence<br>
+Le premier document indique comment énoncé et présenter une compétence. Ce document constitue un bon début, cependant certains détails utiles peuvent manquer. Comme des codes d'identification de compétences référencé dans les normes européennes.<br>
 Le second document est un exemple de porte-feuille de compétences. Il respecte la structure défini dans le premier document. Pourtant, le document manque d'esthétique et il n'y a pas de réelle emphase sur les compétences. Certains manques sont à palier afin de permettre une expérience utilisateur plus intéressante et proche des besoins énoncés.</p>
 <h1 id="cahier-des-charges">Cahier des charges</h1>
 <!--
@@ -502,8 +502,7 @@ contraintes humaines, financières, temporelles, juridiques ...
 <h1 id="introduction">Introduction</h1>
 <!-- - Rappelé fonctionnalités -->
 <ul>
-<li>
-<p>création:</p>
+<li>création:
 <ul>
 <li>créer des compétences</li>
 <li>créer des expériences</li>
@@ -512,8 +511,7 @@ contraintes humaines, financières, temporelles, juridiques ...
 <li>créer des liens entre toutes ces entités (si les liens existent)</li>
 </ul>
 </li>
-<li>
-<p>lecture:</p>
+<li>lecture:
 <ul>
 <li>liste par expériences et exemples</li>
 <li>liste par références</li>
@@ -523,11 +521,162 @@ contraintes humaines, financières, temporelles, juridiques ...
 <li>détail d'un exemple</li>
 </ul>
 </li>
+</ul>
+<h2 id="logiciels-existant">Logiciels Existant</h2>
+<p>Pour ce qui est des documents texte:</p>
+<ul>
 <li>
-<p>Logiciels existants/conccurence</p>
+<p>Microsoft Word, qui fait partie de la suite 365, outil incontournable et référence du traitement de texte, la limite est que c'est un outil payant, et pas forcément abordable pour tout le monde</p>
 </li>
 <li>
-<p>Etude logiciel développé</p>
+<p>Logiciel OpenSource, aussi ou presque aussi complet que Word, mais souvent bien moins appréciés que son conccurent au niveau de l'interface. Cependant cette solution a le mérite d'être gratuite.</p>
+</li>
+<li>
+<p>Google docs, l'essor des services en ligne et du cloud l'ont propulsé dans les outils les plus utilisés. Comportant bien moins de fonctionnalités que les autres solutions proposées, il a cependant l'avantage de faciliter le partage de documents et le travail simultané.</p>
+</li>
+</ul>
+<p>Pour les slides, nous retrouvons les mêmes types de solutions, avec les mêmes avantages ou inconvénients:</p>
+<ul>
+<li>Microsoft PowerPoint</li>
+<li>Logiciel OpenSource</li>
+<li>Google Slide</li>
+</ul>
+<p>Une autre solution serait le site web, statique bien entendu. Toutefois son élaboration peut prendre un certain temps s'il est créée de toute pièce. C'est pourquoi nous pouvons nous tourner vers des CMS (Content Management System). Les CMS, permette de créer facilement des sites web, comme des blogs par exemples, des sites vitrines etc.. Orientés édition de contenu, ils peuvent convenir aux besoins énoncés précédemment. De plus la mise en ligne d'un site web permet une grande accessibilité. Toutefois, il ne rend pas forcément plus facile la présentation du porte-feuille de compétences.<br>
+Il existent une multitude de CMS dans différents langages de programmation, en voici quelques uns parmi les plus présents:</p>
+<ul>
+<li>WordPress</li>
+<li>Joomla</li>
+<li>Drupal</li>
+</ul>
+<h2 id="h%C3%A9bergementserveur-accessibilit%C3%A9">Hébergement/Serveur accessibilité</h2>
+<p>Pour les documents textes et les slides, il aurait pu être difficile de rendre le document accessible autrement que par support papier. Mais aujourd'hui, des solutions &quot;cloud&quot; sont nombreuses, bien souvent gratuite (Google Drive, DropBox..) et permettent de rendre accessible ces documents par internet. De plus, il est possible de joindre ces documents à un CV dans un mail, par exemple.</p>
+<p>Concernant les sites web, l'hébergement est déjà plus compliqué. Les solutions d'hébergement gratuites sont peu nombreuses et mettent à disposition des performances plutôt pauvre. Toutefois, un porte-feuille n'engendre normalement pas un très gros traffic, et les performances sont amplement suffisante pour le projet. Le gros avantage de cette solution est la création facile des liens entre Compétences, Expériences, Exemples etc.. et la navigation que cela permettrait.</p>
+<!--Explication accessibilité-->
+<p>Voici quelques solutions d'hébergement:</p>
+<!-- 
+Ouh la la téma les exemples..
+-->
+<p>fr.000webhost.com, gratuit et déjà utilisé l'année dernière pour un projet. Constitue une solution intéressante.</p>
+<p>https://www.wordpress-hebergement.fr/</p>
+<p>https://www.hebergementwordpress.fr/hebergement-wordpress-gratuit/<br>
+3 mois gratuit et 3.99€/mois ensuite.</p>
+<h2 id="impact-et-co%C3%BBts">Impact et coûts</h2>
+<p>Le besoin en temps de développement du projet avec un CMS peut être relativement court. Toutefois, notre base de compétence sur le CMS n'es pas suffisante pour estimer précisément les durées des tâches. Le projet est un projet développé dans le cadre universitaire, donc il n'y aura pas de coûts liés aux développement même si on pourrait en donner une approximation hypothétique.</p>
+<p>De plus les solutions techniques choisis sont gratuites. Les coûts engendré concerne seulement l'électricité par exemple.</p>
+<p>Découpage des tâches:</p>
+<ol>
+<li>Installer environnement: 40 min
+<ol>
+<li>Installer Wamp/Mamp: 10-20 min</li>
+<li>Installer WordPress: 20min</li>
+</ol>
+</li>
+<li>Travail de recherche et choix préalable: 3h
+<ol>
+<li>Trouver un thème qui colle le plus possible à la charte graphique: 1h</li>
+<li>Trouver les modules dont nous aurons besoins: 2h</li>
+</ol>
+</li>
+<li>Installation des outils Wordpress: 50min
+<ol>
+<li>Application du thème: 10 min</li>
+<li>Intégrations des modules et paramétrage: 40 min</li>
+</ol>
+</li>
+<li>Créer contenu
+<ol>
+<li>Créer des compétences: 1h</li>
+<li>Créer des Expériences: 1h</li>
+<li>Créer des exemples: 1h</li>
+</ol>
+</li>
+<li>Publication et mise en lien
+<ol>
+<li>Publier le contenu: 10-20min</li>
+<li>Créer le contenu à afficher: 30 min</li>
+<li>Instaurer les différents liens: 30 min</li>
+</ol>
+</li>
+<li>Front-end
+<ul>
+<li>Modifier l'esthétique de la page 10min-2h (dépend du thème)</li>
+</ul>
+</li>
+</ol>
+<div class="mermaid">
+gantt
+    title Planification optimiste
+    dateFormat YYYY-MM-DD
+    section Installation
+    Wamp : crit,A1, 2021-01-20, 20m
+    Wordpress : crit,A2, after A1 ,20m
+    %%
+    section Travail de recherche
+    Trouver thème: crit,B1, after A2, 1h
+    Trouver outils: B2, after A2, 2h
+    %%
+    section Installation des outils
+    Application du thème : crit,C1, after B1, 30m
+    Application module : C2, after B2, 40m
+    %%
+    section création de contenu
+    Créer Compétences : crit,D1, after A2, 1h
+    Créer Expériences : crit,D2, after A2, 1h
+    Créer Exemples : crit,D3, after A2, 1h
+    %%
+    section Publication et mise en lien
+    Créer la présentation: crit,E1, after D1, 30m
+    Publier le contenu: crit,E2, after E1, 20m
+    Instaurer liens: crit,E3, after E2, 30m
+    %%
+    section Front-end
+    Modifier l'esthétique : F1, after C1, 3h
+    %%
+    %%section Jalon
+    %%1er jet :crit, 2021-04-05, 1d
+    %%Fin projet :crit,2021-06-13,1d
+</div>
+<div class="mermaid">
+gantt
+    title Planification étalée
+    dateFormat YYYY-MM-DD
+    section Installation
+    Wamp : crit,A1, 2021-01-20, 0.5d
+    Wordpress : crit,A2, after A1 ,0.5d
+    %%
+    section Travail de recherche
+    Trouver thème: crit,B1, after A2, 1w
+    Trouver outils: B2, after A2, 2w
+    %%
+    section Installation des outils
+    Application du thème : crit,C1, after B1, 30m
+    Application module : C2, after B2, 1w
+    %%
+    section création de contenu
+    Créer Compétences : crit,D1, after A2, 2w
+    Créer Expériences : crit,D2, after A2, 2w
+    Créer Exemples : crit,D3, after A2, 2w
+    %%
+    section Publication et mise en lien
+    Créer la présentation: crit,E1, after D1, 1w
+    Publier le contenu: crit,E2, after E1, 3h
+    Instaurer liens: crit,E3, after E2, 2d
+    %%
+    section Front-end
+    Modifier l'esthétique : F1, after C1, 2021-04-05
+    %%
+    section after 1er jalon
+    individualisation projet : Z1,after jalon1,1d
+    adaptation structure: Z2, after Z1,2021-05-31
+    adaptation esthétique: Z3,after Z1,2021-06-13
+    section Jalon
+    1er jet :crit, jalon1, 2021-04-05, 1d
+    Fin projet :crit, jalon2, 2021-06-13,1d
+</div>
+<hr>
+<ul>
+<li>Logiciels existants/concurrence</li>
+<li>Étude logiciel développé
 <ul>
 <li>Type de solution</li>
 <li>Environnement de programmation</li>
@@ -536,23 +685,17 @@ contraintes humaines, financières, temporelles, juridiques ...
 <li>Intégration au SI existant</li>
 </ul>
 </li>
-<li>
-<p>Etude impact de la solution choisie</p>
+<li>Étude impact de la solution choisie
 <ul>
-<li>cout de dev</li>
-<li>cout installation et maintenance</li>
-<li>cout organisationelle</li>
+<li>coût de dev</li>
+<li>coût installation et maintenance</li>
+<li>coût organisationnelle</li>
 <li>interop avec les SI</li>
 </ul>
 </li>
-<li>
-<p>Proposition d'une solution</p>
-</li>
-<li>
-<p>Découpage de la solution en sous système + diagramme de GANTT</p>
-</li>
-<li>
-<p>Modélisation front-end</p>
+<li>Proposition d'une solution</li>
+<li>Découpage de la solution en sous système + diagramme de GANTT</li>
+<li>Modélisation front-end
 <ul>
 <li>charte graphique application</li>
 <li>maquettage</li>

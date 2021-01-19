@@ -170,23 +170,131 @@ Il existent une multitude de CMS dans différents langages de programmation, en 
 ## Hébergement/Serveur accessibilité
 Pour les documents textes et les slides, il aurait pu être difficile de rendre le document accessible autrement que par support papier. Mais aujourd'hui, des solutions "cloud" sont nombreuses, bien souvent gratuite (Google Drive, DropBox..) et permettent de rendre accessible ces documents par internet. De plus, il est possible de joindre ces documents à un CV dans un mail, par exemple.
 
-Concernant les sites web, l'hébergement est déjà plus compliqué. Les solutions d'hébergement gratuites sont peu nombreuses et mettent à disposition des performances plutôt pauvre. Toutefois, un porte-feuille n'engendre normalement pas un très gros traffic, et les performances sont amplement suffisante pour le projet. Le gros avantage de cette solution est la création facile des liens entre Compétences, Expéreiences, Exemples etc.. et la navigation que cela permettrait.
+Concernant les sites web, l'hébergement est déjà plus compliqué. Les solutions d'hébergement gratuites sont peu nombreuses et mettent à disposition des performances plutôt pauvre. Toutefois, un porte-feuille n'engendre normalement pas un très gros traffic, et les performances sont amplement suffisante pour le projet. Le gros avantage de cette solution est la création facile des liens entre Compétences, Expériences, Exemples etc.. et la navigation que cela permettrait.
 <!--Explication accessibilité-->
 Voici quelques solutions d'hébergement:
 <!-- 
 Ouh la la téma les exemples..
 -->
+fr.000webhost.com, gratuit et déjà utilisé l'année dernière pour un projet. Constitue une solution intéressante.
+
+https://www.wordpress-hebergement.fr/
+
+https://www.hebergementwordpress.fr/hebergement-wordpress-gratuit/  
+3 mois gratuit et 3.99€/mois ensuite.
+
+## Impact et coûts
+Le besoin en temps de développement du projet avec un CMS peut être relativement court. Toutefois, notre base de compétence sur le CMS n'es pas suffisante pour estimer précisément les durées des tâches. Le projet est un projet développé dans le cadre universitaire, donc il n'y aura pas de coûts liés aux développement même si on pourrait en donner une approximation hypothétique.
+
+De plus les solutions techniques choisis sont gratuites. Les coûts engendré concerne seulement l'électricité par exemple.
+
+Découpage des tâches:
+1. Installer environnement: 40 min
+    1. Installer Wamp/Mamp: 10-20 min
+    2. Installer WordPress: 20min
+2. Travail de recherche et choix préalable: 3h
+    1. Trouver un thème qui colle le plus possible à la charte graphique: 1h
+    2. Trouver les modules dont nous aurons besoins: 2h
+3. Installation des outils Wordpress: 50min
+    1. Application du thème: 10 min
+    2. Intégrations des modules et paramétrage: 40 min
+4. Créer contenu
+    1. Créer des compétences: 1h
+    2. Créer des Expériences: 1h
+    3. Créer des exemples: 1h
+5. Publication et mise en lien
+    1. Publier le contenu: 10-20min
+    2. Créer le contenu à afficher: 30 min
+    3. Instaurer les différents liens: 30 min
+6. Front-end
+    - Modifier l'esthétique de la page 10min-2h (dépend du thème)
+
+<div class="mermaid">
+gantt
+    title Planification optimiste
+    dateFormat YYYY-MM-DD
+    section Installation
+    Wamp : crit,A1, 2021-01-20, 20m
+    Wordpress : crit,A2, after A1 ,20m
+    %%
+    section Travail de recherche
+    Trouver thème: crit,B1, after A2, 1h
+    Trouver outils: B2, after A2, 2h
+    %%
+    section Installation des outils
+    Application du thème : crit,C1, after B1, 30m
+    Application module : C2, after B2, 40m
+    %%
+    section création de contenu
+    Créer Compétences : crit,D1, after A2, 1h
+    Créer Expériences : crit,D2, after A2, 1h
+    Créer Exemples : crit,D3, after A2, 1h
+    %%
+    section Publication et mise en lien
+    Créer la présentation: crit,E1, after D1, 30m
+    Publier le contenu: crit,E2, after E1, 20m
+    Instaurer liens: crit,E3, after E2, 30m
+    %%
+    section Front-end
+    Modifier l'esthétique : F1, after C1, 3h
+    %%
+    %%section Jalon
+    %%1er jet :crit, 2021-04-05, 1d
+    %%Fin projet :crit,2021-06-13,1d
+</div>
+
+<div class="mermaid">
+gantt
+    title Planification étalée
+    dateFormat YYYY-MM-DD
+    section Installation
+    Wamp : crit,A1, 2021-01-20, 0.5d
+    Wordpress : crit,A2, after A1 ,0.5d
+    %%
+    section Travail de recherche
+    Trouver thème: crit,B1, after A2, 1w
+    Trouver outils: B2, after A2, 2w
+    %%
+    section Installation des outils
+    Application du thème : crit,C1, after B1, 30m
+    Application module : C2, after B2, 1w
+    %%
+    section création de contenu
+    Créer Compétences : crit,D1, after A2, 2w
+    Créer Expériences : crit,D2, after A2, 2w
+    Créer Exemples : crit,D3, after A2, 2w
+    %%
+    section Publication et mise en lien
+    Créer la présentation: crit,E1, after D1, 1w
+    Publier le contenu: crit,E2, after E1, 3h
+    Instaurer liens: crit,E3, after E2, 2d
+    %%
+    section Front-end
+    Modifier l'esthétique : F1, after C1, 2021-04-05
+    %%
+    section after 1er jalon
+    individualisation projet : Z1,after jalon1,1d
+    adaptation structure: Z2, after Z1,2021-05-31
+    adaptation esthétique: Z3,after Z1,2021-06-13
+    section Jalon
+    1er jet :crit, jalon1, 2021-04-05, 1d
+    Fin projet :crit, jalon2, 2021-06-13,1d
+</div>
+
+-----------------------------
+
+
 - Logiciels existants/concurrence
-- Etude logiciel développé
+- Étude logiciel développé
     - Type de solution
     - Environnement de programmation
     - Framework de développement
     - Serveurs/hébergement
     - Intégration au SI existant
-- Etude impact de la solution choisie
+- Étude impact de la solution choisie
     - coût de dev
     - coût installation et maintenance
-    - coût organisationelle
+    - coût organisationnelle
     - interop avec les SI
 - Proposition d'une solution
 - Découpage de la solution en sous système + diagramme de GANTT
@@ -195,3 +303,5 @@ Ouh la la téma les exemples..
     - maquettage
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+      
