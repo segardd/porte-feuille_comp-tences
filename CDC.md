@@ -1,9 +1,9 @@
 # Introduction
-Sans le contexte de notre seconde année de master MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises), nous participons à l'UE "Trans-10 Environnement socio-économique". Dans le cadre de cet UE nous nous intéressons au porte-feuille de compétences. Ce porte-feuille de compétences est un outil, utile par exemple dans la recherche d'un poste dans un entreprise, qui permet de montrer et justifier un ensemble de compétences divers et variés, les mettre en valeur, ce qui peut, par exemple, compléter un CV.
-Ce cahier des charges concerne donc l'élaboration de ce porte-feuille de compétences.  
+Sans le contexte de notre seconde année de master MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises), nous participons à l'UE "Trans-10 Environnement socio-économique". Dans le cadre de cet UE nous nous intéressons au portefeuille de compétences. Ce porte-feuille de compétences est un outil, utile par exemple dans la recherche d'un poste dans un entreprise, qui permet de montrer et justifier un ensemble de compétences divers et variés, les mettre en valeur, ce qui peut, par exemple, compléter un CV.
+Ce cahier des charges concerne donc l'élaboration de ce portefeuille de compétences.  
 
 # Besoins
-Le porte-feuille doit remplir des besoins différents, autant que ce soit des besoins venant du créateur que ce soit du lecteur.
+Le portefeuille doit remplir des besoins différents, autant que ce soit des besoins venant du créateur que ce soit du lecteur.
 Le créateur doit pouvoir aisément construire son catalogue de compétences, justifié, construit autour d'expériences etc..  
 Quant au lecteur, la lecture, pour lui, doit être rapide et simple, le support doit lui permettre d'identifier rapidement les compétences et justifications.
 Nous devons donc définir ce qu'est une compétence, comment la justifié, et définir les éléments qu'il y a autour.  
@@ -191,7 +191,8 @@ De plus les solutions techniques choisis sont gratuites. Les coûts engendré co
 Découpage des tâches:
 1. Installer environnement: 40 min
     1. Installer Wamp/Mamp: 10-20 min
-    2. Installer WordPress: 20min
+    2. Créer BDD: 10min
+    3. Installer WordPress: 20min
 2. Travail de recherche et choix préalable: 3h
     1. Trouver un thème qui colle le plus possible à la charte graphique: 1h
     2. Trouver les modules dont nous aurons besoins: 2h
@@ -215,7 +216,8 @@ gantt
     dateFormat YYYY-MM-DD
     section Installation
     Wamp : crit,A1, 2021-01-20, 20m
-    Wordpress : crit,A2, after A1 ,20m
+    Créer BDD: crit,A3, after A1, 10m
+    Wordpress : crit,A2, after A3 ,20m
     %%
     section Travail de recherche
     Trouver thème: crit,B1, after A2, 1h
@@ -231,9 +233,13 @@ gantt
     Créer Exemples : crit,D3, after A2, 1h
     %%
     section Publication et mise en lien
-    Créer la présentation: crit,E1, after D1, 30m
+    Créer la présentation: crit,E1, after D1, 2h
+    Créer page CV: crit, E1,after D1,2h
+    Créer page détail Compétence: crit,E1,after D1,2h
+    Créer page détail Expérience: crit,E1,after D1,2h
+    Créer page détail Exemple: crit,E1,after D1,2h
     Publier le contenu: crit,E2, after E1, 20m
-    Instaurer liens: crit,E3, after E2, 30m
+    Instaurer liens: crit,E7, after E2, 30m
     %%
     section Front-end
     Modifier l'esthétique : F1, after C1, 3h
@@ -248,8 +254,9 @@ gantt
     title Planification étalée
     dateFormat YYYY-MM-DD
     section Installation
-    Wamp : crit,A1, 2021-01-20, 0.5d
-    Wordpress : crit,A2, after A1 ,0.5d
+    Wamp : crit,A1, 2021-01-20, 0.333d
+    Créer BDD: crit, A3, after A1,0.333d
+    Wordpress : crit,A2, after A3 ,0.333d
     %%
     section Travail de recherche
     Trouver thème: crit,B1, after A2, 1w
@@ -264,10 +271,57 @@ gantt
     Créer Expériences : crit,D2, after A2, 2w
     Créer Exemples : crit,D3, after A2, 2w
     %%
-    section Publication et mise en lien
+    section Présentation Publication et mise en lien
     Créer la présentation: crit,E1, after D1, 1w
-    Publier le contenu: crit,E2, after E1, 3h
-    Instaurer liens: crit,E3, after E2, 2d
+    Créer page CV: crit, E1,after D1,2w
+    Créer page détail Compétence: crit,E1,after D1,2w
+    Créer page détail Expérience: crit,E1,after D1,2w
+    Créer page détail Exemple: crit,E1,after D1,2w
+    Publier le contenu: crit,E6, after E1, 1d
+    Instaurer liens: crit,E7, after E2, 1d
+    %%
+    section Front-end
+    Modifier l'esthétique : F1, after C1, 2021-04-05
+    %%
+    section after 1er jalon
+    individualisation projet : Z1,after jalon1,1d
+    adaptation structure: Z2, after Z1,2021-05-31
+    adaptation esthétique: Z3,after Z1,2021-06-13
+    section Jalon
+    1er jet :crit, jalon1, 2021-04-05, 1d
+    Fin projet :crit, jalon2, 2021-06-13,1d
+</div>
+
+<div class="mermaid">
+gantt
+    title Planification étalée
+    dateFormat YYYY-MM-DD
+    section Installation
+    Wamp : crit,A1, 2021-01-20, 0.333d
+    Créer BDD: crit, A3, after A1,0.333d
+    Wordpress : crit,A2, after A3 ,0.333d
+    %%
+    section Travail de recherche
+    Trouver thème: crit,B1, after A2, 1w
+    Trouver outils: B2, after A2, 2w
+    %%
+    section Installation des outils
+    Application du thème : crit,C1, after B1, 30m
+    Application module : C2, after B2, 1w
+    %%
+    section création de contenu
+    Créer Compétences : crit,D1, after A2, 2w
+    Créer Expériences : crit,D2, after A2, 2w
+    Créer Exemples : crit,D3, after A2, 2w
+    %%
+    section Présentation Publication et mise en lien
+    Créer la présentation: crit,E1, after D1, 1w
+    Créer page CV: crit, E1,after D1,2w
+    Créer page détail Compétence: crit,E1,after D1,2w
+    Créer page détail Expérience: crit,E1,after D1,2w
+    Créer page détail Exemple: crit,E1,after D1,2w
+    Publier le contenu: crit,E6, after E1, 1d
+    Instaurer liens: crit,E7, before jalon1, 1d
     %%
     section Front-end
     Modifier l'esthétique : F1, after C1, 2021-04-05

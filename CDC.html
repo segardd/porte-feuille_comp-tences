@@ -353,7 +353,7 @@ code {
 }
 
 </style>
-<link rel="stylesheet" href="file:///c%3A//Users//donat//Desktop//lettre_motiv.css" type="text/css">
+
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </head>
 <body>
@@ -366,20 +366,20 @@ code {
     });
   </script>
 <h1 id="introduction">Introduction</h1>
-<p>Sans le contexte de notre seconde année de master MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises), nous participons à l'UE &quot;Trans-10 Environnement socio-économique&quot;. Dans le cadre de cet UE nous nous intéressons au porte-feuille de compétences. Ce porte-feuille de compétences est un outil, utile par exemple dans la recherche d'un poste dans un entreprise, qui permet de montrer et justifier un ensemble de compétences divers et variés, les mettre en valeur, ce qui peut, par exemple, compléter un CV.<br>
-Ce cahier des charges concerne donc l'élaboration de ce porte-feuille de compétences.</p>
+<p>Sans le contexte de notre seconde année de master MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises), nous participons à l'UE &quot;Trans-10 Environnement socio-économique&quot;. Dans le cadre de cet UE nous nous intéressons au portefeuille de compétences. Ce porte-feuille de compétences est un outil, utile par exemple dans la recherche d'un poste dans un entreprise, qui permet de montrer et justifier un ensemble de compétences divers et variés, les mettre en valeur, ce qui peut, par exemple, compléter un CV.
+Ce cahier des charges concerne donc l'élaboration de ce portefeuille de compétences.</p>
 <h1 id="besoins">Besoins</h1>
-<p>Le porte-feuille doit remplir des besoins différents, autant que ce soit des besoins venant du créateur que ce soit du lecteur.<br>
+<p>Le portefeuille doit remplir des besoins différents, autant que ce soit des besoins venant du créateur que ce soit du lecteur.
 Le créateur doit pouvoir aisément construire son catalogue de compétences, justifié, construit autour d'expériences etc..<br>
-Quant au lecteur, la lecture, pour lui, doit être rapide et simple, le support doit lui permettre d'identifier rapidement les compétences et justifications.<br>
+Quant au lecteur, la lecture, pour lui, doit être rapide et simple, le support doit lui permettre d'identifier rapidement les compétences et justifications.
 Nous devons donc définir ce qu'est une compétence, comment la justifié, et définir les éléments qu'il y a autour.</p>
 <!--réflexion sur le porte-feuille de compétences-->
 <h1 id="existant">Existant</h1>
-<p>Dans le cadre de ce projet, nous avons la présence d'existant.<br>
-Deux document word sont à notre disposition:<br>
-- Document de structure d'une compétence<br>
-- Document exemple de porte-feuille de compétence<br>
-Le premier document indique comment énoncé et présenter une compétence. Ce document constitue un bon début, cependant certains détails utiles peuvent manquer. Comme des codes d'identification de compétences référencé dans les normes européennes.<br>
+<p>Dans le cadre de ce projet, nous avons la présence d'existant.
+Deux document word sont à notre disposition:
+- Document de structure d'une compétence
+- Document exemple de porte-feuille de compétence
+Le premier document indique comment énoncé et présenter une compétence. Ce document constitue un bon début, cependant certains détails utiles peuvent manquer. Comme des codes d'identification de compétences référencé dans les normes européennes.
 Le second document est un exemple de porte-feuille de compétences. Il respecte la structure défini dans le premier document. Pourtant, le document manque d'esthétique et il n'y a pas de réelle emphase sur les compétences. Certains manques sont à palier afin de permettre une expérience utilisateur plus intéressante et proche des besoins énoncés.</p>
 <h1 id="cahier-des-charges">Cahier des charges</h1>
 <!--
@@ -541,7 +541,7 @@ contraintes humaines, financières, temporelles, juridiques ...
 <li>Logiciel OpenSource</li>
 <li>Google Slide</li>
 </ul>
-<p>Une autre solution serait le site web, statique bien entendu. Toutefois son élaboration peut prendre un certain temps s'il est créée de toute pièce. C'est pourquoi nous pouvons nous tourner vers des CMS (Content Management System). Les CMS, permette de créer facilement des sites web, comme des blogs par exemples, des sites vitrines etc.. Orientés édition de contenu, ils peuvent convenir aux besoins énoncés précédemment. De plus la mise en ligne d'un site web permet une grande accessibilité. Toutefois, il ne rend pas forcément plus facile la présentation du porte-feuille de compétences.<br>
+<p>Une autre solution serait le site web, statique bien entendu. Toutefois son élaboration peut prendre un certain temps s'il est créée de toute pièce. C'est pourquoi nous pouvons nous tourner vers des CMS (Content Management System). Les CMS, permette de créer facilement des sites web, comme des blogs par exemples, des sites vitrines etc.. Orientés édition de contenu, ils peuvent convenir aux besoins énoncés précédemment. De plus la mise en ligne d'un site web permet une grande accessibilité. Toutefois, il ne rend pas forcément plus facile la présentation du porte-feuille de compétences.
 Il existent une multitude de CMS dans différents langages de programmation, en voici quelques uns parmi les plus présents:</p>
 <ul>
 <li>WordPress</li>
@@ -568,6 +568,7 @@ Ouh la la téma les exemples..
 <li>Installer environnement: 40 min
 <ol>
 <li>Installer Wamp/Mamp: 10-20 min</li>
+<li>Créer BDD: 10min</li>
 <li>Installer WordPress: 20min</li>
 </ol>
 </li>
@@ -609,7 +610,8 @@ gantt
     dateFormat YYYY-MM-DD
     section Installation
     Wamp : crit,A1, 2021-01-20, 20m
-    Wordpress : crit,A2, after A1 ,20m
+    Créer BDD: crit,A3, after A1, 10m
+    Wordpress : crit,A2, after A3 ,20m
     %%
     section Travail de recherche
     Trouver thème: crit,B1, after A2, 1h
@@ -625,9 +627,13 @@ gantt
     Créer Exemples : crit,D3, after A2, 1h
     %%
     section Publication et mise en lien
-    Créer la présentation: crit,E1, after D1, 30m
+    Créer la présentation: crit,E1, after D1, 2h
+    Créer page CV: crit, E1,after D1,2h
+    Créer page détail Compétence: crit,E1,after D1,2h
+    Créer page détail Expérience: crit,E1,after D1,2h
+    Créer page détail Exemple: crit,E1,after D1,2h
     Publier le contenu: crit,E2, after E1, 20m
-    Instaurer liens: crit,E3, after E2, 30m
+    Instaurer liens: crit,E7, after E2, 30m
     %%
     section Front-end
     Modifier l'esthétique : F1, after C1, 3h
@@ -641,8 +647,9 @@ gantt
     title Planification étalée
     dateFormat YYYY-MM-DD
     section Installation
-    Wamp : crit,A1, 2021-01-20, 0.5d
-    Wordpress : crit,A2, after A1 ,0.5d
+    Wamp : crit,A1, 2021-01-20, 0.333d
+    Créer BDD: crit, A3, after A1,0.333d
+    Wordpress : crit,A2, after A3 ,0.333d
     %%
     section Travail de recherche
     Trouver thème: crit,B1, after A2, 1w
@@ -657,10 +664,56 @@ gantt
     Créer Expériences : crit,D2, after A2, 2w
     Créer Exemples : crit,D3, after A2, 2w
     %%
-    section Publication et mise en lien
+    section Présentation Publication et mise en lien
     Créer la présentation: crit,E1, after D1, 1w
-    Publier le contenu: crit,E2, after E1, 3h
-    Instaurer liens: crit,E3, after E2, 2d
+    Créer page CV: crit, E1,after D1,2w
+    Créer page détail Compétence: crit,E1,after D1,2w
+    Créer page détail Expérience: crit,E1,after D1,2w
+    Créer page détail Exemple: crit,E1,after D1,2w
+    Publier le contenu: crit,E6, after E1, 1d
+    Instaurer liens: crit,E7, after E2, 1d
+    %%
+    section Front-end
+    Modifier l'esthétique : F1, after C1, 2021-04-05
+    %%
+    section after 1er jalon
+    individualisation projet : Z1,after jalon1,1d
+    adaptation structure: Z2, after Z1,2021-05-31
+    adaptation esthétique: Z3,after Z1,2021-06-13
+    section Jalon
+    1er jet :crit, jalon1, 2021-04-05, 1d
+    Fin projet :crit, jalon2, 2021-06-13,1d
+</div>
+<div class="mermaid">
+gantt
+    title Planification étalée
+    dateFormat YYYY-MM-DD
+    section Installation
+    Wamp : crit,A1, 2021-01-20, 0.333d
+    Créer BDD: crit, A3, after A1,0.333d
+    Wordpress : crit,A2, after A3 ,0.333d
+    %%
+    section Travail de recherche
+    Trouver thème: crit,B1, after A2, 1w
+    Trouver outils: B2, after A2, 2w
+    %%
+    section Installation des outils
+    Application du thème : crit,C1, after B1, 30m
+    Application module : C2, after B2, 1w
+    %%
+    section création de contenu
+    Créer Compétences : crit,D1, after A2, 2w
+    Créer Expériences : crit,D2, after A2, 2w
+    Créer Exemples : crit,D3, after A2, 2w
+    %%
+    section Présentation Publication et mise en lien
+    Créer la présentation: crit,E1, after D1, 1w
+    Créer page CV: crit, E1,after D1,2w
+    Créer page détail Compétence: crit,E1,after D1,2w
+    Créer page détail Expérience: crit,E1,after D1,2w
+    Créer page détail Exemple: crit,E1,after D1,2w
+    Publier le contenu: crit,E6, after E1, 1d
+    Instaurer liens: crit,E7, before jalon1, 1d
     %%
     section Front-end
     Modifier l'esthétique : F1, after C1, 2021-04-05
